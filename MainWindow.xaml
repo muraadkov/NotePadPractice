@@ -1,0 +1,58 @@
+﻿<Window x:Class="Practice06._06.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice06._06"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontFamily="Comic Sans MS"
+        Background="{DynamicResource MaterialDesignPaper}"
+        
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="792" Background="{x:Null}">
+            <MenuItem x:Name="fileMenu" Header="Файл" Width="90" Height="26" FontSize="14">
+                <MenuItem Name="createNewTextBox" Header="Создать"/>
+                <MenuItem Header="Открыть..." Name="openDocument" Click="OpenDocument_Click"/>
+                <MenuItem Name="saveTextBox" Click="saveTextBox_Click" Header="Сохранить"/>
+                <MenuItem Header="Сохранить как..." Name="saveAs" Click="SaveAs_Click"/>
+                <Separator/>
+                <MenuItem Header="Параметры страницы"/>
+                <MenuItem Name="print" Header="Печать" Click="Print_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Правка"  Width="125" Height="26" FontSize="14">
+                <MenuItem Header="Отменить"/>
+                <Separator/>
+                <MenuItem Header="Вырезать"/>
+                <MenuItem Header="Копировать"/>
+                <MenuItem Header="Вставить"/>
+                <MenuItem Header="Удалить"/>
+            </MenuItem>
+            <MenuItem Header="Формат"  Width="141" Height="26" FontSize="14">
+                <MenuItem Header="Перенос по словам"/>
+                <MenuItem Header="Шрифт"/>
+            </MenuItem>
+            <MenuItem Header="Вид"  Width="98" Height="26" FontSize="14">
+                <MenuItem Header="Строка состояния"/>
+            </MenuItem>
+            <MenuItem Header="Справка" Width="154" Height="26" FontSize="14">
+                <MenuItem Header="Просмотреть справку"/>
+                <Separator/>
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+        <Separator HorizontalAlignment="Left" Height="53" Margin="-10,0,0,0"  VerticalAlignment="Top" Width="802" Background="#FFF2F2F2"/>
+        <RichTextBox Name="richTextBox" HorizontalAlignment="Left" Height="393" VerticalAlignment="Top" Width="792" Margin="0,26,0,0">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>
